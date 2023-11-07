@@ -33,7 +33,7 @@ const handleLogin = async (e) => {
       if (response.status === 200) {
         const token = await response.json();
         setMessage(`Login bem-sucedido. Token: ${token}`);
-        window.location.href = 'https://4e5e-2804-620c-8f3-a200-ccd3-bf61-7cf6-15de.ngrok-free.app/home'
+        window.location.href = 'https://front-programas.onrender.com/home'
       } else {
         const data = await response.json();
         setMessage(`Erro no login: ${data}`);
