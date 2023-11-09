@@ -18,9 +18,10 @@ export const Button = styled.button`
   background-color: ${primaryColor};
   color: ${textColor};
   width: 130px;
+  height: 20px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 3px;
   cursor: pointer;
   transition: background-color 0.3s;
 
