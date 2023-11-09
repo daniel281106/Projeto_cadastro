@@ -23,7 +23,7 @@ const cadastro = () => {
             });
     
             if (response.ok) {
-                window.location.href = 'https://front-programas.onrender.com/login';
+                window.location.href = 'https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/login';
             } else {
                 console.error('A solicitação POST não foi bem-sucedida.');
             }
@@ -35,7 +35,7 @@ const cadastro = () => {
 
     return <>
         <C.Container>
-            <h2>Cadastro</h2>
+            <C.Title>Cadastro</C.Title>
             <C.Form>
                 <C.Input
                     type="email"
@@ -53,10 +53,10 @@ const cadastro = () => {
                     name='password'
                     placeholder='Senha'
                 />
-                <C.div>
-                <C.Button onClick={handlePostusers}>Inserir</C.Button>
-                <C.Button><C.Links to="/login">login</C.Links></C.Button>
-                </C.div>
+                <C.Div>
+                <C.Button onClick={handlePostusers}>Cadastrar-se</C.Button>
+                <C.Button onClick={(e)=>{e.preventDefault()}}><C.Links to="/login">Já Tem Uma Conta?</C.Links></C.Button>
+                </C.Div>
             </C.Form>
         </C.Container>
 

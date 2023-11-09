@@ -10,7 +10,7 @@ const global = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        background-color: #fff;
+        background-color: #333;
         font-size: 16px;
     }
 `;

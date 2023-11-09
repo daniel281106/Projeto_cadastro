@@ -1,11 +1,17 @@
+
 import { useState, useEffect } from 'react'
+
 import * as C from "./login.js"
+
+
 
 
 const login = ()=>{
 
 const [values, setValues] = useState();
 const [message, setMessage] = useState('');
+
+
 
 const handleChangeValues = (value) => {
 
@@ -32,8 +38,9 @@ const handleLogin = async (e) => {
 
       if (response.status === 200) {
         const token = await response.json();
+        localStorage.setItem('token', token);
         setMessage(`Login bem-sucedido. Token: ${token}`);
-        window.location.href = 'https://front-programas.onrender.com/home'
+        window.location.href = "https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/home"
       } else {
         const data = await response.json();
         setMessage(`Erro no login: ${data}`);
@@ -43,10 +50,21 @@ const handleLogin = async (e) => {
       console.error(error);
     }
   };
+  const isUserLog = ()=>{
+    const token = localStorage.getItem('token');
+    return token !== null
+  }
+  useEffect(()=>{
+
+    if(isUserLog()){
+      window.location.href = "https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/home"
+    }
+
+  }, [])
 
 return <>
 <C.Container>
-      <h2>Login</h2>
+      <C.Title>Login</C.Title>
       <C.Form>
         <C.Input
           type="email"
@@ -64,7 +82,9 @@ return <>
           name='password'
           placeholder='Senha'
         />
-        <C.Button onClick={handleLogin}>Inserir</C.Button>
+        <C.Div>
+        <C.Button onClick={handleLogin}>Fazer login</C.Button>
+        </C.Div>
         
       </C.Form>
     </C.Container>
