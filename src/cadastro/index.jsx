@@ -23,7 +23,7 @@ const cadastro = () => {
             });
     
             if (response.ok) {
-                window.location.href = 'https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/login';
+                window.location.href = 'https://front-programas.onrender.com/login';
             } else {
                 console.error('A solicitação POST não foi bem-sucedida.');
             }

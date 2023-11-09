@@ -40,7 +40,7 @@ const handleLogin = async (e) => {
         const token = await response.json();
         localStorage.setItem('token', token);
         setMessage(`Login bem-sucedido. Token: ${token}`);
-        window.location.href = "https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/home"
+        window.location.href = "https://front-programas.onrender.com/home"
       } else {
         const data = await response.json();
         setMessage(`Erro no login: ${data}`);
@@ -57,7 +57,7 @@ const handleLogin = async (e) => {
   useEffect(()=>{
 
     if(isUserLog()){
-      window.location.href = "https://768b-2804-620c-8f3-a200-6117-2084-f965-614b.ngrok-free.app/home"
+      window.location.href = "https://front-programas.onrender.com/home"
     }
 
   }, [])
