@@ -1,27 +1,31 @@
-import * as C from "./styles.js"
+
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 
-const home = ()=>{
-
+export const Home = ()=>{
+  const navigate = useNavigate();
     const logout = ()=>{
       localStorage.removeItem('token');
 
-      window.location.href = 'https://front-programas.onrender.com/login';
+      navigate("/login");
     }
+    const isUserLog = ()=>{
+      const token = localStorage.getItem('token');
+      return token !== null
+    }
+    useEffect(()=>{
+  
+      if(!isUserLog()){
+        navigate('/login')
+      }
+  
+    }, [navigate])
 
     return <>
-    <C.HeaderContainer>
-      <C.Title>Meu Site</C.Title>
-      <C.LinksContainer>
-        <C.NavLink href="#"><C.Links to="/novela">novela</C.Links></C.NavLink>
-        <C.NavLink href="#"><C.Links to="/ator">ator</C.Links></C.NavLink>
-        <C.NavLink href="#"><C.Links to="/personagens">personagens</C.Links></C.NavLink>
-        <C.NavLink href="#"><C.Links to="/capitulo">capitulo</C.Links></C.NavLink>
-        <C.NavLink href="#"><C.Links to="/personagemnovela">personagem e novela</C.Links></C.NavLink>
-        <C.Button onClick={logout}>Sair</C.Button>
-      </C.LinksContainer>
-    </C.HeaderContainer>
+
+    <button onClick={logout}>sair</button>
+   
     </>
 }
-export default home;

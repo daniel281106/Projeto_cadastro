@@ -50,6 +50,7 @@ const handleLogin = async (e) => {
     } catch (error) {
       setMessage('Erro ao processar o login.');
       console.error(error);
+      console.log(message)
     }
   };
   const isUserLog = ()=>{
