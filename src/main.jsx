@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import  { ThemeProvider } from "styled-components"
-import { theme } from './styles/theme.js'
+import { theme } from './styles/Theme.js'
 import { Global } from './styles/Global.js'
 import { Routes } from './router'
 
