@@ -11,7 +11,7 @@ export const Global = createGlobalStyle`
     body{
         color: ${({ theme }) => theme.COLORS.TEXT};
         width: 100%;
-        margin-top: 10px;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;

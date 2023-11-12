@@ -3,8 +3,8 @@ import cinema from "../../assets/cinema.png"
 
 
 export const Container = styled.div`
-    width: 800px;
-    height: 550px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     padding: 4px;
