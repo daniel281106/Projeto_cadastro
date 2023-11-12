@@ -1,8 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-
-const global = createGlobalStyle`
+import { createGlobalStyle } from "styled-components"
+export const Global = createGlobalStyle`
     :root{
-        font-size: 62.5%;
+        font-size: 62.5% !important;
     }
     *{
         margin: 0;
@@ -10,8 +9,27 @@ const global = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        background-color: #333;
+        color: ${({ theme }) => theme.COLORS.TEXT};
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_COLOR_700};
     }
+
+    a{
+        text-decoration: none;
+    }
+    button, a {
+        cursor: pointer;
+        transition: filter 0.2s ease-in-out;
+    }
+    button:hover, a:hover{
+        filter: brightness(0.9);
+    }
+
+
 `;
-export default global;

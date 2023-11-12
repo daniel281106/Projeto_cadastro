@@ -1,4 +1,4 @@
-import * as C from "./home.js"
+import * as C from "./styles.js"
 
 
 
